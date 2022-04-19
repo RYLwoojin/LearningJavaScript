@@ -1,7 +1,4 @@
-.alert-box {
-  background: rgb(46, 97, 78);
-  color: blue;
-  padding: 20px;
-  border-radius: 5px;
-  display: none;
+.yellow-bg {
+  background: yellow;
 }
+
