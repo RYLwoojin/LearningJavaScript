@@ -1,0 +1,20 @@
+<p>태조 이성계가 태어난 년도는?</p>
+<input type="text" id="answer">
+<button id="send-answer">제출</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+
+  var count = 0;
+
+  document.querySelector('#send-answer').addEventListener('click', function(){
+    count += 1;
+    var 유저답안 = document.querySelector('#answer').value;
+    if (유저답안 == '1335') {
+      alert('성공')
+    } else if (count >= 3 && 유저답안 != '1335'){
+      alert('멍청아')
+    }
+  });
+</script>
