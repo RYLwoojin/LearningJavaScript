@@ -9,26 +9,51 @@
   <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand">Navbar</span>
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
+  <div class="black-bg">
+    <div class="white-bg">
+      <h4>로그인하세요</h4>
+      <form action="success.html">
+        <div class="my-3">
+          <input type="text" class="form-control" id="email">
+         </div>
+         <div class="my-3">
+           <input type="password" class="form-control" id = "password">
+         </div>
+         <button type="submit" class="btn btn-primary" id="send">전송</button>
+         <button type="button" class="btn btn-danger" id="close">닫기</button>
+      </form> 
+      <!-- <button class="btn btn-danger" id="close">닫기</button> -->
     </div>
-  </nav> 
-  <ul class="list-group">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
-  </ul> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </div> 
+  <button class ='my-3' id="test-btn"> button </button>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <script>
-    document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
-      document.getElementsByClassName('list-group')[0].classList.toggle('show');
+    $('form').on('submit', function(e){
+      if (document.getElementById('email').value.length == 0){
+        alert('Enter ID')
+        e.preventDefault();
+      } else if (document.getElementById('password').value.length == 0){
+        alert('Enter PW')
+        e.preventDefault();
+      } else if (document.getElementById('password').value.length < 6){
+        alert('PW must be longer than 6 digits')
+        e.preventDefault();
+      }
     });
+
+    $('#test-btn').on('click',function(){
+      $('.black-bg').addClass('show-modal')
+    });
+    
+    $('#close').on('click',function(){
+      $('.black-bg').removeClass('show-modal')
+    });
+
+
   </script>
 </body>
 </html>
