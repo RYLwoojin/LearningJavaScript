@@ -1,0 +1,14 @@
+<div class="alert alert-danger">
+  click in 5sec!
+</div>
+
+<script>
+
+  setTimeout(function(){
+    document.querySelector('.alert').style.display='none';
+  },5000)
+
+  setInterval(function(){
+    console.log('Hello')
+  },1000)
+</script>

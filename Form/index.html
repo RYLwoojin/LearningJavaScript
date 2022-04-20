@@ -33,6 +33,16 @@
 
   <script>
     $('form').on('submit', function(e){
+      var input = document.getElementById('email').value;
+      if ( /\S+@\S+\.\S+/.test(input)){
+      }else{
+        alert('Wrong Email Format!')
+        e.preventDefault();
+      }
+      if(/[A-Z]/.test(document.getElementById('password').value) == false){
+        alert('PW must include at leat one Uppercase letter')
+        e.preventDefault();
+      }
       if (document.getElementById('email').value.length == 0){
         alert('Enter ID')
         e.preventDefault();
@@ -42,7 +52,7 @@
       } else if (document.getElementById('password').value.length < 6){
         alert('PW must be longer than 6 digits')
         e.preventDefault();
-      }
+      } 
     });
 
     $('#test-btn').on('click',function(){
